@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Title</title>
+<style>
+    /* Animation for title */
+    .deconstructed {
+        position: relative;
+        margin: auto;
+        min-height: 50px; /* Adjusted min-height for smaller screens */
+        color: black;
+        font-family: 'Cambay', sans-serif;
+        font-size: 24px; /* Adjusted font size for smaller screens */
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.03em;
+    }
+    .deconstructed > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #333;
+        pointer-events: none;
+    }
+    .deconstructed > div:nth-child(1) {
+        -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
+        mask-image: linear-gradient(black 25%, transparent 25%);
+        animation: deconstructed1 5s infinite;
+    }
+    .deconstructed > div:nth-child(2) {
+        -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+        mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+        animation: deconstructed2 5s infinite;
+    }
+    .deconstructed > div:nth-child(3) {
+        -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+        mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+        animation: deconstructed3 5s infinite;
+    }
+    .deconstructed > div:nth-child(4) {
+        -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
+        mask-image: linear-gradient(transparent 75%, black 75%);
+        animation: deconstructed4 5s infinite;
+    }
+
+    @keyframes deconstructed1 {
+        0% {
+            transform: translateX(100%);
+        }
+        26% {
+            transform: translateX(0%);
+        }
+        83% {
+            transform: translateX(-0.1%);
+        }
+        100% {
+            transform: translateX(-120%);
+        }
+    }
+    @keyframes deconstructed2 {
+        0% {
+            transform: translateX(100%);
+        }
+        24% {
+            transform: translateX(0.5%);
+        }
+        82% {
+            transform: translateX(-0.2%);
+        }
+        100% {
+            transform: translateX(-125%);
+        }
+    }
+    @keyframes deconstructed3 {
+        0% {
+            transform: translateX(100%);
+        }
+        22% {
+            transform: translateX(0%);
+        }
+        81% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-130%);
+        }
+    }
+    @keyframes deconstructed4 {
+        0% {
+            transform: translateX(100%);
+        }
+        20% {
+            transform: translateX(0%);
+        }
+        80% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-135%);
+        }
+    }
+
+    body {
+        animation: gradientFlow 20s infinite alternate;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes gradientFlow {
+        0% {
+            background-color: #ff6666;
+        }
+        50% {
+            background-color: #66ff66;
+        }
+        100% {
+            background-color: #6666ff;
+        }
+    }
+
+    .search-container {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    #searchInput {
+        width: calc(100% - 60px); /* Adjusted width to accommodate button */
+        max-width: 300px; /* Adjusted max-width for smaller screens */
+        padding: 12px;
+        border: 2px solid #ccc;
+        border-radius: 25px;
+        margin-right: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    #searchInput:focus {
+        border-color: #4CAF50;
+    }
+
+    #searchBtn {
+        padding: 12px 15px; /* Adjusted padding for smaller screens */
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px; /* Adjusted font size for smaller screens */
+        transition: background-color 0.3s;
+    }
+
+    #searchBtn:hover {
+        background-color: #45a049;
+    }
+
+    #searchResults {
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .video-container {
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        width: calc(100% - 20px); /* Adjusted width for mobile */
+        max-width: 300px; /* Adjusted max-width for smaller screens */
+    }
+
+    .video-container:hover {
+        transform: translateY(-5px);
+    }
+
+    .video-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .video-container h2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .video-container p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    #embeddedVideo {
+        margin: 20px auto;
+        max-width: 560px;
+    }
+</style>
+</head>
+<body>
+    <div class="deconstructed">
+        <div>JAI SHREE KRISHNA JI</div>
+        <div>JAI SHREE KRISHNA JI</div>
+        <div>JAI SHREE KRISHNA JI</div>
+        <div>JAI SHREE KRISHNA JI</div>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter your search query">
+        <button id="searchBtn" onclick="searchYouTube()">Search</button>
+    </div>
+    <div id="searchResults"></div>
+    <div id="embeddedVideo"></div>
+
+    <script>
+        function searchYouTube() {
+            var searchQuery = document.getElementById("searchInput").value;
+            var apiKey = "AIzaSyDaey2Gb3ztxxOaeYomVjBDcH7-wW1d9VA";
+            var apiUrl = "https://www.googleapis.com/youtube/v3/search?q=" + encodeURIComponent(searchQuery) + "&key=" + apiKey + "&part=snippet&type=video&maxResults=20";
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error && data.error.code === 403 && data.error.errors[0].reason === "quotaExceeded") {
+                        alert("YouTube Data API quota limit exceeded. Please try again later.");
+                    } else {
+                        displaySearchResults(data.items);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function displaySearchResults(items) {
+            var searchResultsDiv = document.getElementById("searchResults");
+            searchResultsDiv.innerHTML = ""; // Clear previous search results
+
+            items.forEach(item => {
+                var videoId = item.id.videoId;
+                var title = item.snippet.title;
+                var description = item.snippet.description;
+
+                var thumbnailUrl = item.snippet.thumbnails.medium.url;
+
+                // Create elements for video thumbnail, title, and description
+                var videoContainer = document.createElement("div");
+                videoContainer.classList.add("video-container");
+
+                var thumbnailImg = document.createElement("img");
+                thumbnailImg.src = thumbnailUrl;
+                thumbnailImg.alt = title;
+
+                var titleHeading = document.createElement("h2");
+                titleHeading.textContent = title;
+
+                var descriptionParagraph = document.createElement("p");
+                descriptionParagraph.textContent = description;
+
+                // Add click event listener to video container
+                videoContainer.addEventListener("click", function() {
+                    embedVideo(videoId);
+                });
+
+                // Append elements to video container
+                videoContainer.appendChild(thumbnailImg);
+                videoContainer.appendChild(titleHeading);
+                videoContainer.appendChild(descriptionParagraph);
+
+                // Append video container to search results div
+                searchResultsDiv.appendChild(videoContainer);
+            });
+        }
+
+        function embedVideo(videoId) {
+            var embeddedVideoDiv = document.getElementById("embeddedVideo");
+            embeddedVideoDiv.innerHTML = ""; // Clear previous embedded video
+
+            var iframe = document.createElement("iframe");
+            iframe.width = "100%";
+            iframe.height = "315";
+            iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            iframe.allowFullscreen = true;
+
+            embeddedVideoDiv.appendChild(iframe);
+
+            // Scroll to the embedded video
+            embeddedVideoDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
